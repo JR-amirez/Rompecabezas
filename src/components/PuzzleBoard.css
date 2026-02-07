@@ -1,0 +1,132 @@
+.puzzle-stage1 {
+  width: 100%;
+  max-width: min(96vw, 920px);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+}
+
+.puzzle-stage1__toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.puzzle-stage1__meta {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.puzzle-stage1__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 32px;
+}
+
+.puzzle-stage1__solved {
+  color: #166534;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.puzzle-stage1__canvas {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.puzzle-stage1__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  pointer-events: none;
+}
+
+.puzzle-stage1__overlayTitle {
+  margin: 0;
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.72);
+  color: #f8fafc;
+  font-size: clamp(18px, 2.6vw, 28px);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.puzzle-stage1__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  touch-action: none;
+}
+
+.tray {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 10px;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  background: #f1f5f9;
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  height: 40%;
+}
+
+.trayPieceSlot {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(148, 163, 184, 0.16);
+  scroll-snap-align: start;
+}
+
+.trayPieceSvg {
+  display: block;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media (max-width: 720px) {
+  .puzzle-stage1__meta {
+    align-items: flex-start;
+  }
+
+  .puzzle-stage1__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
