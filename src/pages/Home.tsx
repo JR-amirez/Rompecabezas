@@ -99,6 +99,7 @@ const Home: React.FC<PlayProps> = ({ difficulty = "basic" }) => {
   const [showKeepTrying, setShowKeepTrying] = useState<boolean>(false);
   const [showCongrats, setShowCongrats] = useState<boolean>(false);
   const [isPuzzleCompleted, setIsPuzzleCompleted] = useState<boolean>(false);
+  const [imagenRompecabezas, setImagenRompecabezas] = useState<string | undefined>(undefined);
 
   const numExercises = EJERCICIOS_POR_DIFICULTAD[difficultyConfig];
   const currentExerciseRef = useRef(currentExercise);
@@ -124,6 +125,7 @@ const Home: React.FC<PlayProps> = ({ difficulty = "basic" }) => {
 
         const imagenesConfig = obtenerImagenesConfig(data);
         if (imagenesConfig.length > 0) {
+          setImagenRompecabezas(imagenesConfig[0]);
         }
 
         if (data.autor) setAppAutor(data.autor);
@@ -572,8 +574,7 @@ const Home: React.FC<PlayProps> = ({ difficulty = "basic" }) => {
             <div className="ins-stats">
               <p style={{ textAlign: "justify" }}>
                 <strong>
-                  Resuelve mentalmente la operación que aparece en pantalla y
-                  elige la respuesta correcta entre las opciones
+                  Coloca las piezas correctamente para formar la imagen.
                 </strong>
               </p>
             </div>
@@ -769,6 +770,7 @@ const Home: React.FC<PlayProps> = ({ difficulty = "basic" }) => {
                 difficulty={difficultyConfig}
                 onSolved={handlePuzzleSolved}
                 showSolvedOverlay={!showSummary}
+                {...(imagenRompecabezas ? { imageSource: imagenRompecabezas } : {})}
               />
             </div>
 

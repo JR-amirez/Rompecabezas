@@ -1,9 +1,8 @@
 {
-    "nivel": "intermedio",
-    "imagen": "/assets/images.jpg",
-    "autor": "Norma",
+    "nivel": "avanzado",
+    "imagen": "/assets/paisaje.jpg",
     "version": "1.0.0",
-    "fecha": "2026-01-05",
+    "fecha": "2026-02-16",
     "descripcion": "Rompecabezas",
     "nombreApp": "STEAM-G",
     "plataformas": ["iOS", "Android", "Web"]
